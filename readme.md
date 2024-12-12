@@ -12,7 +12,7 @@ I plan on including the following languages:
 - [ ] Kotlin
 - [ ] Nix
 - [ ] Haskell
-- [ ] Prolog
+- [x] Prolog [day2](./day2)
 - [ ] C#
 - [ ] bash/sh
 - [ ] C++
