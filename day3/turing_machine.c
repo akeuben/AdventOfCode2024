@@ -107,7 +107,10 @@ void parse_tape(const char *filename) {
     char *raw_tape = calloc(length * 10 + 1, sizeof(char));
     tape = calloc(length * 10 + 1, sizeof(char));
 
-    fread(raw_tape, sizeof(char), length, tape_file);
+    unsigned long result = fread(raw_tape, sizeof(char), length, tape_file);
+    if(!result) {
+        fprintf(stderr, "Failed to parse tape file\n");
+    }
     raw_tape[length] = '\0';
 
     // Remove invalid characters
@@ -147,8 +150,7 @@ int main(int argc, char **argv) {
             printf("\n\n");
             break;
         }
-
-        //printf("%c\t\tq%d/%c->q%d/%c/%d\t%s\n", read, state, read, instruction.state, instruction.new_character, instruction.direction, tape);
+        
         tape[head] = instruction.new_character;
         if(head != 0 || instruction.direction != -1) head += instruction.direction;
         state = instruction.state;
