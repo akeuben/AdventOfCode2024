@@ -2,5 +2,8 @@
   pkgs.mkShell {
     nativeBuildInputs = with pkgs; [ 
         swiProlog
+        ghc
+        gcc
+        gnumake
     ];
 }

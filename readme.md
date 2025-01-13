@@ -26,4 +26,4 @@ I plan on including the following languages:
 - [ ] Pascal
 - [ ] Cobol
 - [ ] R
-- [ ] Turing Machine
+- [x] Turing Machine [day3](./day3)
